@@ -277,8 +277,8 @@
                             <div class="form-row">
                                 <div class="col-md-3 col-sm-3">
                                     <div class="form-group">
-                                        <label for="what" class="col-form-label">What?</label>
-                                        <input name="keyword" type="text" class="form-control" id="what" placeholder="What are you looking for?">
+                                        <label for="what" class="col-form-label">{{searchForm.oaciCode}}</label>
+                                        <input [(ngModel)]="searchForm.oaciCode" name="keyword" type="text" class="form-control" id="what" placeholder="What are you looking for?">
                                     </div>
                                     <!--end form-group-->
                                 </div>
@@ -323,8 +323,8 @@
                                     <div class="form-row">
                                         <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 d-xs-grid d-flex align-items-center justify-content-between">
                                             <label>
-                                                <input type="checkbox" name="new">
-                                                New
+                                                <input [(ngModel)]="searchForm.hangar" type="checkbox" name="new">
+                                                Hangar {{searchForm | json}}
                                             </label>
                                             <label>
                                                 <input type="checkbox" name="used">
