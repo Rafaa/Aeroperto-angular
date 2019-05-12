@@ -1,25 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchForm} from '../models/search-form.ts'
+import { SearchForm} from '../models/search-form';
+import { SearchService } from '../search.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit, OnChanges {
+export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(public search:SearchService) {
+    console.log('changes');
+
+  }
+  searchDomes(form) {
+    this.search.searchDome(form).subscribe((data: {}) => {
+      console.log(data);
+    //  this.products = data;
+    });
+  }
+   searchForm = new SearchForm();
+  // searchForm.setOaciCode('LFPH');
+
 
   ngOnInit() {
 
   }
-  ngOnChanges(changes: SimpleChanges) {
-    // changes.prop contains the old and the new value...
-    console.log(changes);
-  }
-console.log('changes');
-  searchForm = new SearchForm();
-  searchForm.oaciCode = 'LFPH';
 
-  greeting = false;
 }

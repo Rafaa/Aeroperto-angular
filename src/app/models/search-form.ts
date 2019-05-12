@@ -7,12 +7,16 @@ export class SearchForm {
   public nightFlight: boolean;
   public repair: boolean;
   public hotelRestaurant: boolean;
-  public Transport: boolean;
-  public Region: string;
+  public transport: boolean;
+  public region: string;
   public city: string;
 
   constructor() {
     this.oaciCode = 'GGG';
     this.hangar = false;
+  }
+
+  setOaciCode(newCode: string) {
+    this.oaciCode = newCode;
   }
 }

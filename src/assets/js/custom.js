@@ -29,7 +29,7 @@ $(document).ready(function($) {
     select.selectize({
         onDropdownOpen: dropdownOpen,
         onDropdownClose: dropdownClose,
-        allowEmptyOption: true,        
+        allowEmptyOption: true,
     });
 
     function dropdownOpen($dropdown){
@@ -205,7 +205,7 @@ $(document).ready(function($) {
 
 //  iCheck
 
-    $("input[type=checkbox], input[type=radio]").iCheck();
+    // $("input[type=checkbox], input[type=radio]").iCheck();
 
     var framedInputRadio = $(".framed input[type=radio]");
     framedInputRadio.on('ifChecked', function(){
@@ -518,7 +518,7 @@ if( $("#input-location2").length ){
 		if (!place.geometry) {
 			return;
 		}
-	});       
+	});
 }
 */
 
