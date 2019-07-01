@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchService } from '../search.service';
 
 @Component({
   selector: 'app-body',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BodyComponent implements OnInit {
 
-  constructor() { }
+  bodyTitle: string;
+
+
+  constructor(private searchService: SearchService) {
+
+  }
 
   ngOnInit() {
+    const bodyTitleObservable = this.searchService.getBodyTitle();
+    bodyTitleObservable.subscribe((newValue: string) => {
+      this.bodyTitle = newValue;
+    });
   }
 
 }

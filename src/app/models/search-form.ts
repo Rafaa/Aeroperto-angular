@@ -12,11 +12,11 @@ export class SearchForm {
   public city: string;
 
   constructor() {
-    this.oaciCode = 'GGG';
-    this.hangar = false;
+    this.oaciCode = '';
+  //  this.hangar = false;
   }
 
   setOaciCode(newCode: string) {
-    this.oaciCode = newCode;
+  //  this.oaciCode = newCode;
   }
 }

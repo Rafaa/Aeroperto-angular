@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
+import { AirportItemComponent } from './airport-item/airport-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     BodyComponent,
-    FooterComponent
+    FooterComponent,
+    AirportItemComponent
   ],
   imports: [
     BrowserModule,
