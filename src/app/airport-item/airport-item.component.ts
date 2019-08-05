@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Airport } from '../models/airport';
 
 @Component({
   selector: 'app-airport-item',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./airport-item.component.css']
 })
 export class AirportItemComponent implements OnInit {
+  @Input() public airportItem : Airport;
 
   constructor() { }
 

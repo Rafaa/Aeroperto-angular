@@ -7,8 +7,9 @@
         <div class="container">
             <h2>{{bodyTitle}}</h2>
             <div class="items grid grid-xl-3-items grid-lg-3-items grid-md-2-items">
-                <app-airport-item></app-airport-item>
-
+              <div class="item" *ngFor='let airport of searchService.airports'>
+                <app-airport-item [airportItem]=airport ></app-airport-item>
+              </div>
 
             </div>
         </div>

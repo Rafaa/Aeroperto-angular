@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchForm} from '../models/search-form';
 import { SearchService } from '../search.service';
+import { Airport } from '../models/airport';
 
 @Component({
   selector: 'app-header',
@@ -14,14 +15,13 @@ export class HeaderComponent implements OnInit {
 
   }
   searchDomes(form) {
-    this.search.searchDome(form).subscribe((data: {}) => {
+    this.search.searchDome(form).subscribe((data: Airport[]) => {
       console.log(data);
+      this.search.airports = data;
     //  this.products = data;
     });
   }
    searchForm = new SearchForm();
-  // searchForm.setOaciCode('LFPH');
-
 
   ngOnInit() {
 

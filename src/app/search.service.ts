@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
+import { Airport } from './models/airport';
 
 const endpoint = 'http://localhost:8080/';
 const httpOptions = {
@@ -17,6 +18,8 @@ export class SearchService {
 
   bodyTitle: string;
   bodyTitleObservable: Observable<string>;
+  public airports : Airport[];
+
 
   constructor(private http: HttpClient) {
     this.bodyTitle = "Contenu sponsorisé"
@@ -38,7 +41,7 @@ export class SearchService {
   }
 
   searchDome (searchForm): Observable<any> {
-    console.log(searchForm);  
+    console.log(searchForm);
 
   //  this.bodyTitleObservable.next("Résultat de recherche");
 
