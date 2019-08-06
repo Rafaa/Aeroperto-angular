@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 import { Airport } from './models/airport';
 
-const endpoint = 'http://localhost:8080/';
+const endpoint = 'http://192.168.0.14:8080/';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json'

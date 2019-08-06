@@ -6,7 +6,7 @@
     <section class="block">
         <div class="container">
             <h2>{{bodyTitle}}</h2>
-            <div class="items grid grid-xl-3-items grid-lg-3-items grid-md-2-items">
+            <div class="items grid compact grid-xl-3-items grid-lg-3-items grid-md-2-items">
               <div class="item" *ngFor='let airport of searchService.airports'>
                 <app-airport-item [airportItem]=airport ></app-airport-item>
               </div>

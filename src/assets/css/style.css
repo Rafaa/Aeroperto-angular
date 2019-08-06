@@ -1115,7 +1115,7 @@ Headers:		'Varela Round', sans-serif;
     height: 31rem;
 }
 .items:not(.selectize-input).grid.compact .item .wrapper .detail {
-    display: none;
+    display: block;
 }
 .items:not(.selectize-input).grid.compact .item .admin-controls {
     position: relative;
