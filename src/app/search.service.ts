@@ -3,8 +3,9 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 import { Airport } from './models/airport';
+import { GooglePhoto } from './models/google-photo';
 
-const endpoint = 'http://192.168.0.14:8080/';
+const endpoint = 'http://localhost:4444/';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json'
@@ -19,6 +20,7 @@ export class SearchService {
   bodyTitle: string;
   bodyTitleObservable: Observable<string>;
   public airports : Airport[];
+  public googlePhoto : GooglePhoto;
 
 
   constructor(private http: HttpClient) {
@@ -50,6 +52,19 @@ export class SearchService {
       catchError(this.handleError<any>('addProduct'))
     );
   }
+
+
+  getGooglePhoto (oaci): Observable<any> {
+    console.log(oaci);
+
+  //  this.bodyTitleObservable.next("Résultat de recherche");
+
+    return this.http.post<any>(endpoint + 'googlePhoto', oaci, httpOptions).pipe(
+      tap((oaci) => console.log(`added product w/ id=${oaci}`)),
+      catchError(this.handleError<any>('addProduct'))
+    );
+  }
+
 
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
